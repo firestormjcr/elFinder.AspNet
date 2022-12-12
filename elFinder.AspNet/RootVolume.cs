@@ -22,7 +22,7 @@ namespace elFinder.AspNet
         /// <param name="directorySeparatorChar">Character used to separate directory levels in a path string. Default is System.IO.Path.DirectorySeparatorChar</param>
         public RootVolume(
             string rootDirectory,
-            string url,
+            string url = null,
             string thumbnailsUrl = null,
             char directorySeparatorChar = default(char))
         {
@@ -71,7 +71,13 @@ namespace elFinder.AspNet
         /// Get or sets if user can only show files (and cannot download).
         /// Note: if you set url property, than users can access to directory by the provided url
         /// </summary>
-        public bool IsShowOnly { get; }
+        public bool IsShowOnly { get; set; }
+        
+        /// <summary>
+        /// Get or sets if the current volume is the entry volume.
+        /// This allows the application to choose which volume (and optional startuppath) should be initially shown to the user
+        /// </summary>
+        public bool IsStartingVolume { get; set; } = false;
 
         /// <summary>
         /// Gets or sets a list of root subfolders that should be locked (user can't remove, rename)
