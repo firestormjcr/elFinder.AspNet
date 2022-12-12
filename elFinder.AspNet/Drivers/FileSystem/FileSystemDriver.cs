@@ -310,7 +310,7 @@ namespace elFinder.AspNet.Drivers.FileSystem
         {
             if (path == null)
             {
-                var root = Roots.FirstOrDefault(r => r.StartDirectory != null);
+                var root = Roots.FirstOrDefault(r => r.IsStartingVolume);
                 if (root == null)
                 {
                     root = Roots.First();
