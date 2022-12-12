@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
 using System.IO.Compression;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace elFinder.AspNet.Drivers
@@ -19,6 +21,10 @@ namespace elFinder.AspNet.Drivers
         /// <param name="item"></param>
         public void AddRoot(RootVolume item)
         {
+            if (item.IsStartingVolume && Roots.Any(r => r.IsStartingVolume))
+            {
+                throw new NotSupportedException("Only one volume can be marked as the starting volume");
+            }
             Roots.Add(item);
             item.VolumeId = $"{VolumePrefix}{Roots.Count}_";
         }
