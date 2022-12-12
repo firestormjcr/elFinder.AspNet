@@ -8,8 +8,6 @@ This project is packaged as a .NET Standard 2.0 library which means it can be us
 
 ## Usage
 
-Install the [elFinder.AspNet](https://www.nuget.org/packages/elFinder.AspNet/) NuGet package into your project.
-
 For ASP.NET Core projects see the sample project, in particular the [FileSystemController](elFinder.AspNet.Web/Controllers/FileSystemController.cs) class.
 
 For MVC 5 projects see [example](MVC5.md) that contains the FileSystemController class compatible for that framework.
